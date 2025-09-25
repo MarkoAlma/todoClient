@@ -1,0 +1,20 @@
+.app {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  flex-direction: column
+}
+
+.doboz {
+  margin-top: 20px;
+  size: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tunik {
+  display: none;
+}
