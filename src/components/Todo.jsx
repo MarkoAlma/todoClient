@@ -1,7 +1,7 @@
 import React from "react";
 //import { todosData } from "../data";
 import { useState } from "react";
-import { ListGroup, ListGroupItem, Spinner } from "reactstrap";
+import { Button, ListGroup, ListGroupItem, Spinner } from "reactstrap";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import NewTodo from "./NewTodo";
@@ -9,7 +9,7 @@ import TodoSummary from "./TodoSummary";
 import { useEffect } from "react";
 import { addTodo, deleteAllTodo, deleteTodo, getTodos, patchTodo} from "../utils";
 
-export const Todo = () => {
+export const Todo = ({setIsLoggedIn}) => {
   const [todo, setTodo] = useState(null);
   console.log(todo);
 
@@ -67,7 +67,6 @@ export const Todo = () => {
 
   return (
     <>
-    <span style={{fontSize:'xx-large'}} onClick={()=>allClear()}><FaRegTrashAlt /></span>
       <div style={{width:'100%'}}>
         <NewTodo handleAdd={handleAdd}/>
         <ListGroup>
@@ -86,6 +85,8 @@ export const Todo = () => {
         </ListGroup>
         {todo && <TodoSummary handleSummary={handleSummary}/>}
       </div>
+    <div style={{fontSize:'xx-large', position:'fixed', top:'5px', left:'5px'}} onClick={()=>allClear()}><FaRegTrashAlt /></div>
+    <Button onClick={()=>setIsLoggedIn(false)} style={{position:'fixed', top:'5px', right:'5px'}}>Log Out</Button>
     </>
   );
 

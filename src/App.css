@@ -18,3 +18,7 @@
 .tunik {
   display: none;
 }
+
+html {
+  height: 100%;
+}

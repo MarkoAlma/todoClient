@@ -4,15 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import {Todo} from './components/Todo'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Login } from './components/Login'
 
 function App() {
   
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
-    <>
-      {isLoggedIn && <Todo/>}
-    </>
+    <div style={{display:'flex', alignItems:'center', justifyContent:'center', minHeight:'100vh'}}>
+      {isLoggedIn ? <Todo setIsLoggedIn={setIsLoggedIn}/> : <Login setIsLoggedIn={setIsLoggedIn}/>}
+    </div>
   )
 }
 
